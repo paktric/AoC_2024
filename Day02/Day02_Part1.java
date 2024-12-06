@@ -36,24 +36,22 @@ public class Day02_Part1 {
 
         // Review each dataReport dataset and count the 'safe' reports
         int safeReports = 0;
-        // view dataReports
         for (int i = 0; i < dataReports.size(); i++) {
-            // view datasets
             boolean ascending = true;
             boolean descending = true;
             boolean difference = true;
             for (int j = 0; j < dataReports.get(i).size()-1 && (ascending || descending ) && difference; j++) {
-//                System.out.print(dataReports.get(i).get(j) + ", ");
+                // Get the current and next numbers from the dataset
                 int current = dataReports.get(i).get(j);
                 int next = dataReports.get(i).get(j+1);
 
-                System.out.println(current + ", " + next);
-
+                // For each current/next pair, compare against the three conditions that make the data 'safe'
                 ascending = ascending && (current <= next);
                 descending = descending && (current >= next);
                 difference = difference && (abs(current - next) >= 1 && abs(current - next) <= 3);
             }
-            System.out.println();
+
+            // Check to see if the report is safe, increment the counter if so
             if ((ascending || descending) && difference){
                 safeReports++;
             }
