@@ -1,4 +1,4 @@
-// Advent of Code 2024, Day 02, Part 1
+// Advent of Code 2024, Day 02, Part 2
 // Patrick Moran
 
 import java.io.File;
@@ -21,7 +21,7 @@ public class Day02_Part2 {
                 // Get the current line as a String, split into individual Strings
                 String[] temp = scanner.nextLine().split(" ");
 
-                // Fill dataset ArrayList with the individual Strings convered to Integers
+                // Fill dataset ArrayList with the individual Strings converted to Integers
                 ArrayList<Integer> dataset = new ArrayList<>();
                 for (String s : temp) {
                     dataset.add(Integer.valueOf(s));
